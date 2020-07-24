@@ -1,4 +1,6 @@
 def creator():
     print("KiqECS")
     print(2020)
-print(creator())
+    print("Mas bah, tudo errado")
+
+creator()

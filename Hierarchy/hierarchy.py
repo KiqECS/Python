@@ -18,22 +18,26 @@ class PessoaF(Pessoa):
         self.cpf = cpf
         super().__init__(nome_C,data_Nasc,nome_P,nome_M)
     def show(self):
+        print("-------------------------------------------------")
         print("Nome: " + self.nome_C)
         print("Data de Nascimento: " + self.data_Nasc)
         print("Nome do Pai: " + self.nome_P)
         print("Nome da Mãe: " + self.nome_M)
         print("CPF: " + self.cpf)
+        print("-------------------------------------------------")
     
 class PessoaJ(Pessoa):
     def __init__(self, nome_C, data_Nasc, nome_P, nome_M,cnpj):
         self.cnpj = cnpj
         super().__init__(nome_C, data_Nasc, nome_P, nome_M)
     def show(self):
+        print("-------------------------------------------------")
         print("Nome: " + self.nome_C)
         print("Data de Nascimento: " + self.data_Nasc)
         print("Nome do Pai: " + self.nome_P)
         print("Nome da Mãe: " + self.nome_M)
         print("CNPJ: " + self.cnpj)
+        print("-------------------------------------------------")
     
 def form(f_or_j):
     if f_or_j == "J":

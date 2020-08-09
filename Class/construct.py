@@ -4,18 +4,18 @@ class Livros:
     cordinha = False
     cor = ""
 
-    def __init__(self,p,cD,cord,cor):
-        self.pag = p
-        self.capa_Dura = cD
-        self.cordinha = cord
+    def __init__(self,pag,capa_Dura,cordinha,cor):
+        self.pag = pag
+        self.capa_Dura = capa_Dura
+        self.cordinha = cordinha 
         self.cor = cor
     
     def exibir(self):
         print("Páginas: " + str(self.pag))
-        capa_D = "Sim" if self.capa_Dura else "Não"
-        print("Capa dura: " + capa_D)
-        corda = "Sim" if self.cordinha else "Não"
-        print("Cordinha para marcação: " + corda)
+        capa_Dura = "Sim" if self.capa_Dura else "Não"
+        print("Capa dura: " + capa_Dura)
+        cordinha = "Sim" if self.cordinha else "Não"
+        print("Cordinha para marcação: " + cordinha)
         print("Cor: " + self.cor)
 
     def mudaP(self):

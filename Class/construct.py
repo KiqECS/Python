@@ -1,24 +1,24 @@
 class Livros:
     pag = 0
-    capa_Dura = False
+    capa_dura = False
     cordinha = False
     cor = ""
 
-    def __init__(self,pag,capa_Dura,cordinha,cor):
+    def __init__(self,pag,capa_dura,cordinha,cor):
         self.pag = pag
-        self.capa_Dura = capa_Dura
+        self.capa_dura = capa_dura
         self.cordinha = cordinha 
         self.cor = cor
     
     def exibir(self):
         print("Páginas: " + str(self.pag))
-        capa_Dura = "Sim" if self.capa_Dura else "Não"
-        print("Capa dura: " + capa_Dura)
+        capa_dura = "Sim" if self.capa_dura else "Não"
+        print("Capa dura: " + capa_dura)
         cordinha = "Sim" if self.cordinha else "Não"
         print("Cordinha para marcação: " + cordinha)
         print("Cor: " + self.cor)
 
-    def mudaP(self):
+    def muda_p(self):
         print("Digite o número de páginas: ")
         self.pag = int(input())
         

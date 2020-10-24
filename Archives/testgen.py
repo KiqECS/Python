@@ -7,4 +7,5 @@ f_name_css = "test.css"
 f_css = open("/home/kiq/LearnWhatever/Python/Archives/" + f_name_css,"xt")
 f_css.write("body{\ntext-align:\"center\"\n}")
 """
+f_html.close()
 # De certa forma é um gerador de estrutura html kkkkk

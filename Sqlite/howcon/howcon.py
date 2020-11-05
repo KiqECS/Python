@@ -22,12 +22,28 @@ def createt(conexao,sql):
         print("Tabela não criada")
         print(ex)
     
-q_sql = """Create table pessoa(
+c_sql = """Create table pessoa(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome varchar(50),
             idade INTEGER
         )"""
 
-createt(c_condb,q_sql)
+def insdb(conexao,sql):
+    try:
+        c=conexao.cursor()
+        c.execute(sql)
+        conexao.commit()
+        print("Adicionado com sucesso")
+    except Error as ex:
+        print("Não adicionado")
+        print(ex)
+
+
+i_nome = input("Digite seu nome: ")
+i_idade = input("Digite a sua idade: ")
+
+i_sql = "insert into pessoa (nome,idade) values('"+i_nome+"','"+i_idade+"')" 
+
+insdb(c_condb,i_sql)
 c_condb.close()
 

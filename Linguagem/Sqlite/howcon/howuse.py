@@ -31,8 +31,14 @@ s_create_sql = """Create table pessoa(
             idade INTEGER
         )"""
 
+#Recebe informações do User
+def info():
+    i_nome = input("Digite seu nome: ")
+    i_idade = input("Digite a sua idade: ")   
+    return i_nome,i_idade
+
 #Insere itens dentro da tabela criada anteriormente 
-def ins_db(conexao,sql):
+def insert_db(conexao,sql):
     try:
         c=conexao.cursor()
         c.execute(sql)
@@ -42,16 +48,11 @@ def ins_db(conexao,sql):
         print("Não adicionado")
         print(ex)
 
-#Recebe informações do User
-def info():
-    i_nome = input("Digite seu nome: ")
-    i_idade = input("Digite a sua idade: ")   
-    return i_nome,i_idade
-
-i_nome,i_idade = info()
-
-#Script SQL para que insere as infomções na tebela
-s_insert_sql = ("insert into pessoa (nome,idade) values('{}','{}')").format(i_nome,i_idade)
+def insert():
+    i_nome,i_idade = info()
+    #Script SQL para que insere as infomações na tebela
+    s_insert_sql = ("insert into pessoa (nome,idade) values('{}','{}')").format(i_nome,i_idade)
+    insert_db(c_con_db,s_insert_sql)
 
 def delete_db(conexao,sql):
     try:
@@ -63,9 +64,31 @@ def delete_db(conexao,sql):
         print("Não Removido")
         print(ex)
 
-s_delete_db = "DELETE FROM pessoa WHERE id = 2"
+#Def para deletar do DB
+def delete(table,id):
+    #Script sql para deletar
+    s_delete_sql = ("DELETE FROM {} WHERE id = {}").format(table,id)
+    #Chamada da função de delete
+    delete_db(c_con_db,s_delete_sql)
 
-ins_db(c_con_db,s_insert_sql)
+def select_db(conexao,sql):
+    try:
+        c = conexao.cursor()
+        c.execute(sql)
+        all_db = c.fetchall()
+        return all_db
+    except Error as ex:
+        print("Erro na entrega")
+        print(ex)
+
+#Script para seleção 
+s_select_sql = "SELECT * FROM pessoa"
+
+#Def para mostrar as informações na tela
+def show_select():
+    ret_select_db=select_db(c_con_db,s_select_sql)
+    for r in ret_select_db:
+        print(r)
 
 #IMPORTANTE!! 
 #Fechamento da DB no final o processo

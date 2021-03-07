@@ -1,4 +1,4 @@
-# Aprendizado em Python :snake
+# Aprendizado em Python :snake:
 
 Meus códigos com base no curso de Python do canal CFB do Youtube.
 

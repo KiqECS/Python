@@ -1,3 +1,4 @@
-# LearnPY
-Neste repositório há todos os codigos que eu aprendi e estou aprendendo em cursos aleátorios da internet.
-Neste caso é Python.
+# Aprendizado em Python :python
+
+Meus códigos com base no curso de Python do canal CFB do Youtube. ..
+Ref-link: 'encurtador.com.br/aQ023'
